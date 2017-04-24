@@ -9,7 +9,8 @@ function init(){
     //シーンオブジェクトの取得
     scene = document.querySelector('a-scene');
     //入力イベントの実装
-    document.addEventListener("keydown", keyInput);
+    document.addEventListener("keydown", keyInputDown);
+    document.addEventListener("keyup", keyInputUp);
 
     //更新処理の開始
     //update();
@@ -32,12 +33,37 @@ function generateBox(){
         width: 1,
     });
 
+    el.setAttribute('position',randX + " " + randY + " -5" );
+
     scene.appendChild(el);
 }
 
 //入力イベント
-function keyInput(e)
+//押されたときのイベント
+function keyInputDown(e)
 {
     console.log(e.keyCode);
-    generateBox();
+    switch (e.keyCode) {
+      case 68:
+
+        break;
+      case 65:
+
+        break;
+      case 87:
+
+        break;
+      case 83:
+
+        break;
+      default:
+
+    }
+    //generateBox();
+}
+
+//離したときのイベント
+function keyInputUp(e)
+{
+  console.log("KeyUp : " + e.keyCode);
 }
