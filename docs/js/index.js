@@ -4,6 +4,7 @@ window.onload = function(){
 }
 
 var scene;  //シーンオブジェクト
+var actor;  //アクターオブジェクト
 //初期化
 function init(){
     //シーンオブジェクトの取得
@@ -11,6 +12,10 @@ function init(){
     //入力イベントの実装
     document.addEventListener("keydown", keyInputDown);
     document.addEventListener("keyup", keyInputUp);
+
+    //アクターオブジェクトの生成
+    actor = new Actor(scene);
+    actor.SetAttribute("camera", "userHeight: 1.6");
 
     //更新処理の開始
     //update();

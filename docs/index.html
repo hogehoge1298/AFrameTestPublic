@@ -1,16 +1,18 @@
 <html>
     <head>
         <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+        <script src="js/Actor.js"></script>
         <script src="js/index.js"></script>
     </head>
     <body>
         <a-scene>
-            <a-camera wasd-controls-enabled="false"></a-camera>
-            <a-box color="red" position="0 2 -5" rotation="0 45 45" scale="2 2 2 ">
-                <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000" repeat="indefinite"></a-animation> 
-            </a-box>
+            <!--<a-camera wasd-controls-enabled="false">
+                <a-box color="red" position="0 0 -5" rotation="0 45 45" scale="2 2 2 ">
+                    <a-animation attribute="position" to="0 -1 -5" direction="alternate" dur="2000" repeat="indefinite"></a-animation> 
+                </a-box>
+            </a-camera>-->
 
-            <a-plane rotation="-90 0 0" width="30" height="30"></a-plane>
+            <a-plane position="0 -5 0" rotation="-90 0 0" width="30" height="30"></a-plane>
 
             <a-sky color="#222"></a-sky>
         </a-scene>
