@@ -1,8 +1,7 @@
 window.onload = function(){
-    console.log("hello, world!");
     init();
 }
-
+var FPS = 30;
 var scene;  //シーンオブジェクト
 var actor;  //アクターオブジェクト
 //初期化
@@ -15,15 +14,17 @@ function init(){
 
     //アクターオブジェクトの生成
     actor = new Actor(scene);
-    actor.SetAttribute("camera", "userHeight: 1.6");
+    actor.SetElementAttribute('geometry',{primitive: 'box', height: 3, width: 1});
+    //actor.Transform.Position = new Vector3(10, 0, 0);
 
     //更新処理の開始
-    //update();
+    update();
 }
 
 //更新
 function update(){
-    setTimeout(update, 1000);
+    actor.Update();
+    setTimeout(update, 1000 / FPS);
 }
 
 //a-boxを生成する
